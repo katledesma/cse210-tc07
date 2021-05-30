@@ -41,6 +41,6 @@ root                    (project root folder)
 ## Authors
 ---
 * Nick Campbell - cam12044@byui.edu
-* Kathleen Ledesma - kat_joone@yahoo.com 
+* Kathleen Ledesma - led19006@byui.edu
 * Erik Machuca Saez - mac19024@byui.edu 
 * Kouadio Kouao - kou15002@byui.edu
