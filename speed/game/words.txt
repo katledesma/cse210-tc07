@@ -575,7 +575,6 @@ asp
 aspect
 aspects
 aspnet
-ass
 assault
 assembled
 assembly
@@ -969,7 +968,6 @@ birth
 birthday
 bishop
 bit
-bitch
 bite
 bits
 biz
@@ -2228,11 +2226,7 @@ cult
 cultural
 culture
 cultures
-cum
-cumshot
-cumshots
 cumulative
-cunt
 cup
 cups
 cure
@@ -2543,9 +2537,7 @@ diana
 diane
 diary
 dice
-dick
 dicke
-dicks
 dictionaries
 dictionary
 did
@@ -2571,8 +2563,6 @@ dig
 digest
 digit
 digital
-dildo
-dildos
 dim
 dimension
 dimensional
@@ -3688,9 +3678,6 @@ fs
 ft
 ftp
 fu
-fuck
-fucked
-fucking
 fuel
 fuji
 fujitsu
@@ -3747,7 +3734,6 @@ gamespot
 gaming
 gamma
 gang
-gangbang
 gap
 gaps
 garage
@@ -6021,8 +6007,6 @@ nikon
 nil
 nine
 nintendo
-nipple
-nipples
 nirvana
 nissan
 nitrogen
@@ -6734,6 +6718,7 @@ pm
 pmc
 pmid
 pn
+pneumonoultramicroscopicsilicovolcanoconiosis
 po
 pocket
 pockets
@@ -8668,6 +8653,7 @@ sunset
 sunshine
 super
 superb
+supercalifragilisticexpialidocious
 superintendent
 superior
 supervision
