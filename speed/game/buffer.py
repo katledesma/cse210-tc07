@@ -2,8 +2,8 @@ from game import constants
 from game.actor import Actor
 from game.point import Point
 
-class Snake:
-    """A limbless reptile. The responsibility of Snake is keep track of its segments. It contains methods for moving and growing among others.
+class Buffer:
+    """The responsibility of Buffer is keep track of (?). It contains methods for moving and growing among others.
 
     Stereotype:
         Structurer, Information Holder
