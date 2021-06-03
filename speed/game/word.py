@@ -23,6 +23,13 @@ class Word(Actor):
         self._points = 0
         self.set_text("jazz")
         self.reset()
+
+        # with open("words.txt") as wordlist:
+        #     words = wordlist.read()
+        #     words = words.splitlines()
+        #     for word in words:
+        #         answer = random.choice(words)
+        #         # get word
     
     def get_points(self):
         """Gets the points this food is worth.
