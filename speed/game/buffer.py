@@ -21,6 +21,7 @@ class Buffer(Actor):
         self._buffer = ""
         position = Point(1, 19)
         self.set_position(position)
+
         self.set_text(f"Buffer: {self._buffer}")
     
     def buffer_input(self, user_input):

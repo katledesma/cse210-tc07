@@ -22,6 +22,9 @@ class Word(Actor):
         super().__init__()
         self._points = 0
         self.set_text("jazz")
+        # text = "jazz"
+        # for text in range(5):
+        #     print(text)
         self.reset()
 
         # with open("words.txt") as wordlist:
@@ -32,13 +35,13 @@ class Word(Actor):
         #         # get word
     
     def get_points(self):
-        """Gets the points this food is worth.
+        """Gets the points this "word" is worth.
         
         Args:
-            self (Food): an instance of Food.
+            self ("word"): an instance of "word".
 
         Returns:
-            integer: The points this food is worth.
+            integer: The points this "word" is worth.
         """
         return self._points
 
@@ -46,7 +49,7 @@ class Word(Actor):
         """Resets the food by moving it to a random position within the boundaries of the screen and reassigning the points to a random number.
         
         Args:
-            self (Food): an instance of Food.
+            self ("word"): an instance of "word".
         """
         self._points = random.randint(1, 5)
         x = random.randint(1, constants.MAX_X - 2)
