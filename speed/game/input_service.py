@@ -50,4 +50,4 @@ class InputService:
         Returns:
             Point: The selected direction.
         """
-        return Point(-1, 0)
+        return Point(0, 1)

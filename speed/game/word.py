@@ -23,8 +23,8 @@ class Word(Actor):
         self._points = 0
         self._segments = []
         self.fill_list()
-        i = random.randint(0, len(self._segments) - 1)
-        self.set_text(self._segments[i])
+        # i = random.randint(0, len(self._segments) - 1)
+        # self.set_text(self._segments[i])
         self.reset()
 
     def fill_list(self):
@@ -33,9 +33,15 @@ class Word(Actor):
         Args:
             self ("word"): an instance of "word".
         """
-        random_word = constants.LIBRARY[random.randint(0, len(constants.LIBRARY))]
-        
-        print()
+        for i in range(0, 5):
+            random_word = constants.LIBRARY[random.randint(0, len(constants.LIBRARY) - 1)]
+            x = random.randint(1, constants.MAX_X - len(self.get_text()))
+            y = random.randint(1, constants.MAX_Y - len(self.get_text()))
+            position = Point(x, y)
+            self.set_position(position)
+            velocity = Point(0, 1)
+            self._add_segment(random_word, position, velocity)
+            print()
     
     def get_points(self):
         """Gets the points this "word" is worth.
@@ -70,10 +76,7 @@ class Word(Actor):
             self ("word"): an instance of "word".
         """
         self._points = len(self.get_text()) * 10
-        x = random.randint(1, constants.MAX_X - len(self.get_text()))
-        y = 1
-        position = Point(x, y)
-        self.set_position(position)
+        
 
     def _add_segment(self, text, position, velocity):
         """Adds a new segment to the snake using the given text, position and velocity.
@@ -89,3 +92,14 @@ class Word(Actor):
         segment.set_position(position)
         segment.set_velocity(velocity)
         self._segments.append(segment)
+
+    def get_all(self):
+        """Gets all the snake's segments.
+        
+        Args:
+            self (Snake): An instance of snake.
+
+        Returns:
+            list: The snake's segments.
+        """
+        return self._segments
