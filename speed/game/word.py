@@ -43,6 +43,7 @@ class Word(Actor):
         Returns:
             integer: The points this "word" is worth.
         """
+        
         return self._points
 
     def reset(self):
@@ -51,9 +52,9 @@ class Word(Actor):
         Args:
             self ("word"): an instance of "word".
         """
-        self._points = random.randint(1, 5)
+        self._points = len(self.get_text()) * 10
         x = random.randint(1, constants.MAX_X - 2)
-        y = random.randint(1, constants.MAX_Y - 2)
+        y = 2
         position = Point(x, y)
         self.set_position(position)
         
