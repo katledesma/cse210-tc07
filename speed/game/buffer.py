@@ -18,10 +18,12 @@ class Buffer:
             self (Snake): An instance of snake.
         """
         super().__init__()
-        self._segments = []
-        self._prepare_body()
+        self._buffer = 0
+        position = Point(20, 0)
+        self.set_position(position)
+        self.set_text(f"Buffer: {self._buffer}")
     
-    def get_all(self):
+    def buffer_input(self, user_input):
         """Gets all the snake's segments.
         
         Args:
@@ -30,22 +32,5 @@ class Buffer:
         Returns:
             list: The snake's segments.
         """
-        return self._segments
-    
-    def move_head(self, direction):
-        """Moves the snake in the given direction.
-
-        Args:
-            self (Buffer): An instance of buffer.
-            direction (Point): The direction to move.
-        """
-        count = len(self._segments) - 1
-        for n in range(count, -1, -1):
-            segment = self._segments[n]
-            if n > 0:
-                leader = self._segments[n - 1]
-                velocity = leader.get_velocity()
-                segment.set_velocity(velocity)
-            else:
-                segment.set_velocity(direction)
-            segment.move_next()
+        self._buffer += user_input
+        self.set_text(f"Buffer: {self._buffer}")
