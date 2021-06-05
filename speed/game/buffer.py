@@ -20,7 +20,7 @@ class Buffer:
         super().__init__()
         self._buffer = 0
         position = Point(20, 0)
-        self.set_position(position)
+        # self.set_position(position)
         self.set_text(f"Buffer: {self._buffer}")
     
     def buffer_input(self, user_input):
@@ -33,4 +33,6 @@ class Buffer:
             list: The snake's segments.
         """
         self._buffer += user_input
+        if user_input == "*":
+            self._buffer = ""
         self.set_text(f"Buffer: {self._buffer}")
