@@ -21,7 +21,7 @@ class Word(Actor):
         """
         super().__init__()
         self._points = 0
-        self._segments = ["apple"]
+        self._segments = []
         self.fill_list()
         i = random.randint(0, len(self._segments) - 1)
         self.set_text(self._segments[i])
@@ -33,11 +33,11 @@ class Word(Actor):
         Args:
             self ("word"): an instance of "word".
         """
-        with open("words.txt") as wordlist:
+        with open("speed\game\words.txt") as wordlist:
             words = wordlist.read()
             words = words.splitlines()
             for word in words:
-                self._segments.append(random.choice(words))
+                self._segments.append(word)
     
     def get_points(self):
         """Gets the points this "word" is worth.
@@ -72,7 +72,7 @@ class Word(Actor):
             self ("word"): an instance of "word".
         """
         self._points = len(self.get_text()) * 10
-        x = random.randint(1, constants.MAX_X - len(get_text()))
+        x = random.randint(1, constants.MAX_X - len(self.get_text()))
         y = 1
         position = Point(x, y)
         self.set_position(position)
