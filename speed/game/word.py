@@ -76,3 +76,18 @@ class Word(Actor):
         y = 1
         position = Point(x, y)
         self.set_position(position)
+
+    def _add_segment(self, text, position, velocity):
+        """Adds a new segment to the snake using the given text, position and velocity.
+
+        Args:
+            self (Snake): An instance of snake.
+            text (string): The segment's text.
+            position (Point): The segment's position.
+            velocity (Point): The segment's velocity.
+        """
+        segment = Actor()
+        segment.set_text(text)
+        segment.set_position(position)
+        segment.set_velocity(velocity)
+        self._segments.append(segment)
