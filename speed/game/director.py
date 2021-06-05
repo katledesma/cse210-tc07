@@ -52,8 +52,10 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        direction = self._input_service.get_letter()
-        # self._buffer.move_head(direction)
+
+        user_input = self._input_service.get_letter()
+        self._buffer.buffer_input(user_input)
+
 
     def _do_updates(self):
         """Updates the important game information for each round of play. In 
