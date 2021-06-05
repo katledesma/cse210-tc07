@@ -1,5 +1,6 @@
 import sys
 from asciimatics.event import KeyboardEvent
+from game.point import Point
 
 class InputService:
     """Detects player input. The responsibility of the class of objects is to detect player keypresses and translate them into a point representing a direction (or velocity).
@@ -38,3 +39,15 @@ class InputService:
             elif event >= 97 and event <= 122: 
                 result = chr(event)
         return result
+
+    def get_direction(self):
+        """Gets the selected direction. If one hasn't been selected the last 
+        one is returned.
+
+        Args:
+            self (InputService): An instance of InputService.
+
+        Returns:
+            Point: The selected direction.
+        """
+        return Point(-1, 0)

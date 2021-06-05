@@ -70,7 +70,8 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        
+        direction = self._input_service.get_direction()
+        self._word.move_word(direction)
         
     def _do_outputs(self):
         """Outputs the important game information for each round of play. In 

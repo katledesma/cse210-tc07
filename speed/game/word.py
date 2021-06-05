@@ -21,7 +21,11 @@ class Word(Actor):
         """
         super().__init__()
         self._points = 0
-        self.set_text("jazz")
+        self._segments = []
+        self._segments.append("jazz")
+        self._segments.append("apple")
+        for i in self._segments:
+            self.set_text(i)
         # text = "jazz"
         # for text in range(5):
         #     print(text)
@@ -44,6 +48,18 @@ class Word(Actor):
             integer: The points this "word" is worth.
         """
         return self._points
+    
+    def move_word(self, direction):
+            """Moves the snake in the given direction.
+
+            Args:
+                self (Snake): An instance of snake.
+                direction (Point): The direction to move.
+            """
+            for n in range(-1, -1):
+                segment = self._segments[n]
+                segment.set_velocity(direction)
+                segment.move_next()
 
     def reset(self):
         """Resets the food by moving it to a random position within the boundaries of the screen and reassigning the points to a random number.
@@ -56,4 +72,3 @@ class Word(Actor):
         y = 2
         position = Point(x, y)
         self.set_position(position)
-        
