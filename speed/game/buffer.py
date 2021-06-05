@@ -19,7 +19,7 @@ class Buffer:
         """
         super().__init__()
         self._segments = []
-        self._prepare_body()
+        #self._prepare_body()
     
     def get_all(self):
         """Gets all the snake's segments.
