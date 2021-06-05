@@ -33,7 +33,7 @@ class Word(Actor):
         Args:
             self ("word"): an instance of "word".
         """
-        for i in range(0, 5):
+        for i in range(0, constants.STARTING_WORDS):
             random_word = constants.LIBRARY[random.randint(0, len(constants.LIBRARY) - 1)]
             x = random.randint(1, constants.MAX_X - len(self.get_text()))
             y = random.randint(1, constants.MAX_Y - len(self.get_text()))
@@ -82,7 +82,7 @@ class Word(Actor):
         """Adds a new segment to the snake using the given text, position and velocity.
 
         Args:
-            self (Snake): An instance of snake.
+            self (Word): An instance of word.
             text (string): The segment's text.
             position (Point): The segment's position.
             velocity (Point): The segment's velocity.
