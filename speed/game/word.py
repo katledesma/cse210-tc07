@@ -43,7 +43,6 @@ class Word(Actor):
         Returns:
             integer: The points this "word" is worth.
         """
-        
         return self._points
 
     def reset(self):

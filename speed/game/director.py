@@ -53,15 +53,14 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-
         user_input = self._input_service.get_letter()
-        self._buffer.buffer_input(user_input)
-        self.user_input += user_input
-
+        #print(user_input)
         if user_input == "*":
             self._handle_word_match(self.user_input)
             self.user_input = ""
-
+        else:
+            self._buffer.buffer_input(user_input)
+            self.user_input += user_input
 
     def _do_updates(self):
         """Updates the important game information for each round of play. In 
