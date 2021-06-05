@@ -2,7 +2,7 @@ from game import constants
 from game.actor import Actor
 from game.point import Point
 
-class Buffer:
+class Buffer(Actor):
     """The responsibility of Buffer is keep track of (?). It contains methods for moving and growing among others.
 
     Stereotype:
@@ -18,9 +18,10 @@ class Buffer:
             self (Snake): An instance of snake.
         """
         super().__init__()
-        self._buffer = 0
-        position = Point(20, 0)
-        # self.set_position(position)
+        self._buffer = ""
+        position = Point(1, 19)
+        self.set_position(position)
+
         self.set_text(f"Buffer: {self._buffer}")
     
     def buffer_input(self, user_input):
