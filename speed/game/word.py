@@ -33,11 +33,9 @@ class Word(Actor):
         Args:
             self ("word"): an instance of "word".
         """
-        with open("speed\game\words.txt") as wordlist:
-            words = wordlist.read()
-            words = words.splitlines()
-            for word in words:
-                self._segments.append(word)
+        random_word = constants.LIBRARY[random.randint(0, len(constants.LIBRARY))]
+        
+        print()
     
     def get_points(self):
         """Gets the points this "word" is worth.
