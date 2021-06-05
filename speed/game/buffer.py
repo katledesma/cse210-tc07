@@ -25,13 +25,10 @@ class Buffer(Actor):
         self.set_text(f"Buffer: {self._buffer}")
     
     def buffer_input(self, user_input):
-        """Gets all the snake's segments.
+        """Gets the user input.
         
         Args:
-            self (Snake): An instance of snake.
-
-        Returns:
-            list: The snake's segments.
+            self (Buffer): An instance of buffer.
         """
         self._buffer += user_input
         if user_input == "*":

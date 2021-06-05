@@ -21,22 +21,23 @@ class Word(Actor):
         """
         super().__init__()
         self._points = 0
-        self._segments = []
-        self._segments.append("jazz")
-        self._segments.append("apple")
-        for i in self._segments:
-            self.set_text(i)
-        # text = "jazz"
-        # for text in range(5):
-        #     print(text)
+        self._segments = ["apple"]
+        self.fill_list()
+        i = random.randint(0, len(self._segments) - 1)
+        self.set_text(self._segments[i])
         self.reset()
 
-        # with open("words.txt") as wordlist:
-        #     words = wordlist.read()
-        #     words = words.splitlines()
-        #     for word in words:
-        #         answer = random.choice(words)
-        #         # get word
+    def fill_list(self):
+        """Populates the word list into _segments.
+        
+        Args:
+            self ("word"): an instance of "word".
+        """
+        with open("words.txt") as wordlist:
+            words = wordlist.read()
+            words = words.splitlines()
+            for word in words:
+                self._segments.append(random.choice(words))
     
     def get_points(self):
         """Gets the points this "word" is worth.
@@ -50,25 +51,28 @@ class Word(Actor):
         return self._points
     
     def move_word(self, direction):
-            """Moves the snake in the given direction.
+            """Moves the words downward each frame.
 
             Args:
-                self (Snake): An instance of snake.
-                direction (Point): The direction to move.
+                self (Word): An instance of word.
+                direction (Point): The direction to move, which is downward.
             """
-            for n in range(-1, -1):
+            count = len(self._segments) - 1
+            for n in range(count, -1, -1):
                 segment = self._segments[n]
                 segment.set_velocity(direction)
                 segment.move_next()
 
     def reset(self):
-        """Resets the food by moving it to a random position within the boundaries of the screen and reassigning the points to a random number.
+        """Resets the word by moving it to a random position 
+        at the top of the screen and appoints a number of points
+        depending on word length.
         
         Args:
             self ("word"): an instance of "word".
         """
         self._points = len(self.get_text()) * 10
-        x = random.randint(1, constants.MAX_X - 2)
-        y = 2
+        x = random.randint(1, constants.MAX_X - len(get_text()))
+        y = 1
         position = Point(x, y)
         self.set_position(position)

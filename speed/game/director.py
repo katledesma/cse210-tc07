@@ -17,7 +17,7 @@ class Director:
         keep_playing (boolean): Whether or not the game can continue.
         output_service (OutputService): The output mechanism.
         score (Score): The current score.
-        buffer (Buffer): The player.
+        buffer (Buffer): The player's input.
     """
 
     def __init__(self, input_service, output_service):
@@ -74,9 +74,8 @@ class Director:
         self._word.move_word(direction)
         
     def _do_outputs(self):
-        """Outputs the important game information for each round of play. In 
-        this case, that means checking if there are stones left and declaring 
-        the winner.
+        """Outputs the important game information for each round of play. 
+        In this case it means to display the game field.
 
         Args:
             self (Director): An instance of Director.
