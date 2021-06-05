@@ -56,7 +56,7 @@ class Director:
 
         user_input = self._input_service.get_letter()
         self._buffer.buffer_input(user_input)
-        self.user_input =+ user_input
+        self.user_input += user_input
 
         if user_input == "*":
             self._handle_word_match(self.user_input)
@@ -92,5 +92,6 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        if user_input == self.word.set_text():
-            pass
+        if user_input == self._word.get_text():
+            points = self._word.get_points()
+            self._score.add_points(points)
